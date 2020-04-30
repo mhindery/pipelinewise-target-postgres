@@ -163,7 +163,7 @@ class TestIntegration(unittest.TestCase):
             self.assert_metadata_columns_not_exist(table_one)
             self.assert_metadata_columns_not_exist(table_two)
             self.assert_metadata_columns_not_exist(table_three)
-            self.assert_metadata_columns_exist(table_four)
+            self.assert_metadata_columns_not_exist(table_four)
 
 
     def test_invalid_json(self):
@@ -217,7 +217,7 @@ class TestIntegration(unittest.TestCase):
 
     def test_loading_with_multiple_schema(self):
         """Loading table with multiple SCHEMA messages"""
-        tap_lines = test_utils.get_test_tap_lines('messages-with-multi-schemas.json')
+        tap_lines = test_utils.get_test_tap_lines('messages-with-multiple-streams.json')
 
         # Load with default settings
         target_postgres.persist_lines(self.config, tap_lines)
