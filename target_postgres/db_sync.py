@@ -69,8 +69,8 @@ def column_type(schema_property):
     elif 'boolean' in property_type:
         col_type = 'boolean'
     
-    breakpoint()
-    print("schema_property: %s -> col_type: %s", schema_property, col_type)
+    # breakpoint()
+    print(f"schema_property: {schema_property} -> col_type: {col_type}")
     get_logger('target_postgres').debug("schema_property: %s -> col_type: %s", schema_property, col_type)
 
     return col_type
