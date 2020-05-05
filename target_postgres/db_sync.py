@@ -68,7 +68,7 @@ def column_type(schema_property):
             col_type = 'numeric'
     elif 'boolean' in property_type:
         col_type = 'boolean'
-
+    print("schema_property: %s -> col_type: %s", schema_property, col_type)
     get_logger('target_postgres').debug("schema_property: %s -> col_type: %s", schema_property, col_type)
 
     return col_type
